@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Hero(tag:"logo",child: Image.asset("assets/breezylogo.jpeg",fit: BoxFit.cover,height: 187,width: 90,)),
             SizedBox(height: 60,),
             InkWell(
-              splashColor: Colors.indigo,
               onTap: (){
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>NextScreen2()));
               },
