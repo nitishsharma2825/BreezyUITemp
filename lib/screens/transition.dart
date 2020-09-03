@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:breezy_ui/widgets/carousel_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:breezy_ui/constants/constants.dart';
 
 class TransitionScreen extends StatefulWidget {
   @override
@@ -67,6 +69,102 @@ class _TransitionScreenState extends State<TransitionScreen> {
                 );
               }).toList(),
             ),
+            SizedBox(
+              height: 62,
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 100),
+                child: Text(
+                  'by continuing, you agree to our',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12, fontFamily: 'AvenirLT'),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 6,
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 100),
+                child: Text.rich(
+                  TextSpan(
+                    text: 'Terms & Conditions',
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontFamily: 'AvenirLT',
+                      decoration: TextDecoration.underline,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: '  &  ',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'AvenirLT',
+                              decoration: TextDecoration.none),
+                          children: [
+                            TextSpan(
+                              text: 'Privacy Policy',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'AvenirLT',
+                                decoration: TextDecoration.underline,
+                              ),
+                            )
+                          ]),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 14,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(25, 0, 7, 0),
+                  child: Container(
+                    height: 53,
+                    width: 157,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(21),
+                      color: kAccentColor,
+                    ),
+                    child: Text(
+                      "Sign In",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: kFontFamilyB),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(7, 0, 25, 0),
+                  child: Container(
+                    height: 53,
+                    width: 157,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(21),
+                      color: kAccentColor,
+                    ),
+                    child: Text(
+                      "Create Account",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: kFontFamilyB),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
@@ -96,7 +194,7 @@ class _TransitionScreenState extends State<TransitionScreen> {
       width: 331,
     )
   ];
-  // ].map((i) {
+  // .map((i) {
   //   return Builder(
   //     builder: (BuildContext context) {
   //       return Container(
@@ -110,58 +208,4 @@ class _TransitionScreenState extends State<TransitionScreen> {
   //     },
   //   );
   // }).toList();
-}
-
-class BuildCarouselItem extends StatelessWidget {
-  final String imgPath;
-  final String title;
-  final String subTitle;
-  final double heigth;
-  final double width;
-  BuildCarouselItem(
-      {@required this.imgPath,
-      this.title,
-      this.subTitle,
-      this.heigth,
-      this.width});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          height: heigth,
-          width: width,
-          child: Image(
-            image: AssetImage(imgPath),
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-        Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50),
-            child: Text(
-              title,
-              style: TextStyle(fontSize: 20, fontFamily: 'AvenirLT'),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100),
-            child: Text(
-              subTitle,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, fontFamily: 'AvenirLT'),
-            ),
-          ),
-        )
-      ],
-    );
-  }
 }
