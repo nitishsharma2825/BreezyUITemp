@@ -1,5 +1,6 @@
 import 'package:breezy_ui/screens/nextscreengridview.dart';
 import 'package:flutter/material.dart';
+import 'constants/constants.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {
@@ -13,19 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(121, 0, 255, 1),
-        accentColor: Color.fromRGBO(255, 204, 0, 1),
+        primaryColor: kPrimaryColor,
+        accentColor: kAccentColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily: "Avenir",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.white, fontSize: 25),
-          bodyText2: TextStyle(color: Colors.black, fontSize: 18),
-        ),
       ),
       home: SplashScreen(
         seconds: 2,
         navigateAfterSeconds: MyHomePage(),
-        backgroundColor: Color.fromRGBO(121, 0, 255, 1),
+        backgroundColor: kPrimaryColor,
         image: Image.asset("assets/breezylogo.jpeg"),
         photoSize: 100.0,
       ),
@@ -42,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(121, 0, 255, 1),
+      backgroundColor: kPrimaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -70,10 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(27),
-                  color: Color.fromRGBO(255, 204, 0, 1),
+                  color: kAccentColor,
                 ),
-                child: Text("Get Started",
-                    style: Theme.of(context).textTheme.bodyText1),
+                child: Text("Get Started", style: kbodyText1),
               ),
             )
           ],
