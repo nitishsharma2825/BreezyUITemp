@@ -1,3 +1,4 @@
+import 'package:breezy_ui/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class LanguageContainer extends StatefulWidget {
@@ -34,7 +35,7 @@ class _LanguageContainerState extends State<LanguageContainer> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(17.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: InkWell(
                   splashColor: Colors.indigo,
                   radius: 10,
@@ -55,6 +56,7 @@ class _LanguageContainerState extends State<LanguageContainer> {
               ),
               Text(
                 "${widget.lang}",
+                style: kbodyText2,
               )
             ],
           )),
